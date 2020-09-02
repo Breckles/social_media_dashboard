@@ -2,6 +2,8 @@
 let rootElement = document.querySelector('html');
 let themeToggleSwitchEl = document.querySelector('#themeToggleSwitch');
 let toggleDotEl = document.querySelector('#toggleDot');
+let overviewHeaderEl = document.querySelector('#overview h2');
+console.log(overviewHeaderEl);
 let currentTheme = 'dark';
 themeToggleSwitchEl.addEventListener('click', () => {
     if (currentTheme === 'dark') {
@@ -14,6 +16,7 @@ themeToggleSwitchEl.addEventListener('click', () => {
         rootElement.style.setProperty('--theme-text-secondary', 'hsl(228, 12%, 44%)');
         rootElement.style.setProperty('--theme-toggle', 'hsl(230, 22%, 74%)');
         rootElement.style.setProperty('--theme-toggle-hover', 'linear-gradient(to right, hsl(210, 78%, 56%), hsl(146, 68%, 55%))');
+        overviewHeaderEl.style.setProperty('color', 'var(--theme-text-secondary)');
         currentTheme = 'light';
     }
     else {
@@ -26,6 +29,7 @@ themeToggleSwitchEl.addEventListener('click', () => {
         rootElement.style.setProperty('--theme-text-secondary', 'hsl(228, 34%, 66%)');
         rootElement.style.setProperty('--theme-toggle', 'linear-gradient(to right, hsl(210, 78%, 56%), hsl(146, 68%, 55%))');
         rootElement.style.setProperty('--theme-toggle-hover', 'linear-gradient(to right, hsl(210, 78%, 56%), hsl(146, 68%, 55%))');
+        overviewHeaderEl.style.setProperty('color', 'var(--theme-text-main)');
         currentTheme = 'dark';
     }
 });

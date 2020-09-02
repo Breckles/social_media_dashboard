@@ -3,6 +3,10 @@ let themeToggleSwitchEl = document.querySelector(
   '#themeToggleSwitch'
 ) as HTMLDivElement;
 let toggleDotEl = document.querySelector('#toggleDot') as HTMLSpanElement;
+let overviewHeaderEl = document.querySelector(
+  '#overview h2'
+) as HTMLHeadingElement;
+console.log(overviewHeaderEl);
 
 let currentTheme: 'dark' | 'light' = 'dark';
 
@@ -27,6 +31,8 @@ themeToggleSwitchEl.addEventListener('click', () => {
       'linear-gradient(to right, hsl(210, 78%, 56%), hsl(146, 68%, 55%))'
     );
 
+    overviewHeaderEl.style.setProperty('color', 'var(--theme-text-secondary)');
+
     currentTheme = 'light';
   } else {
     toggleDotEl.style.left = '5%';
@@ -50,6 +56,8 @@ themeToggleSwitchEl.addEventListener('click', () => {
       '--theme-toggle-hover',
       'linear-gradient(to right, hsl(210, 78%, 56%), hsl(146, 68%, 55%))'
     );
+
+    overviewHeaderEl.style.setProperty('color', 'var(--theme-text-main)');
 
     currentTheme = 'dark';
   }
