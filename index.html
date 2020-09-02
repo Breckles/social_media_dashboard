@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon"
+        type="image/png"
+        sizes="32x32"
+        href="./images/favicon-32x32.png">
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
+        rel="stylesheet">
+
+  <link rel="stylesheet"
+        href="./src/styles/main.css">
+
+  <script src="./dist/main.js"
+          type="text/javascript"
+          defer></script>
+
+  <title>Frontend Mentor | [Challenge Name Here]</title>
+</head>
+
+<body>
+
+  <header>
+    <div id="headerInnerWrapper">
+      <div id="titleContainer">
+        <h1>
+          Social Media Dashboard
+        </h1>
+        <span>Total Followers: 23,004</span>
+      </div>
+      <div id="themeToggleContainer">
+        <label for="themeToggle">Dark Mode</label>
+        <div id="themeToggleSwitch">
+          <input type="checkbox"
+                 id="themeToggle"
+                 name="themeToggle">
+          <span id="toggleDot"></span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+  <section id="followerCounts">
+    <ul>
+      <li class="countCard facebook">
+        <div class="countCardTitle">
+          <img class="countCardIcon"
+               src="./images/icon-facebook.svg"
+               alt="Facebook icon">
+          @nathanf
+        </div>
+        <div class="followerCount">1987</div>
+        <div class="followerText">FOLLOWERS</div>
+        <div class="trend increase">&blacktriangle;12 Today</div>
+      </li>
+      <li class="countCard twitter">
+        <div class="countCardTitle">
+          <img class="countCardIcon"
+               src="./images/icon-twitter.svg"
+               alt="Twitter icon">
+          @nathanf
+        </div>
+        <div class="followerCount">1044</div>
+        <div class="followerText">FOLLOWERS</div>
+        <div class="trend increase">&blacktriangle; 99 Today</div>
+      </li>
+      <li id="instagramCountCardContainer">
+        <div class="countCard instagram">
+          <div class="countCardTitle">
+            <img class="countCardIcon"
+                 src="./images/icon-instagram.svg"
+                 alt="Instagram icon">
+            @realnathanf
+          </div>
+          <div class="followerCount">11k</div>
+          <div class="followerText">FOLLOWERS</div>
+          <div class="trend increase">&blacktriangle; 1099 Today</div>
+        </div>
+      </li>
+      <li class="countCard youtube">
+        <div class="countCardTitle">
+          <img class="countCardIcon"
+               src="./images/icon-youtube.svg"
+               alt="Youtube icon">
+          Nathan F.
+        </div>
+        <div class="followerCount">8239</div>
+        <div class="followerText">SUBSCRIBERS</div>
+        <div class="trend decrease">&blacktriangledown; 144 Today</div>
+      </li>
+    </ul>
+  </section>
+
+  <section id="overview">
+    <h2>
+      Overview - Today
+    </h2>
+
+    <ul>
+      <li class="overviewCard">
+        <div class="overviewCardTitle">
+          Page Views
+          <img src="./images/icon-facebook.svg"
+               alt="Facebook icon">
+        </div>
+        <div class="overviewCardInfo">
+          <div class="stat">87</div>
+          <div class="trend increase">&blacktriangle;3%</div>
+        </div>
+      </li>
+      <li class="overviewCard">
+        <div class="overviewCardTitle">
+          Likes
+          <img src="./images/icon-facebook.svg"
+               alt="Facebook icon">
+        </div>
+        <div class="overviewCardInfo">
+          <span class="stat">52</span>
+          <span class="trend decrease">&blacktriangledown;2%</span>
+        </div>
+      </li>
+      <li class="overviewCard">
+        <div class="overviewCardTitle">
+          Likes
+          <img src="./images/icon-instagram.svg"
+               alt="Instagram icon">
+        </div>
+        <div class="overviewCardInfo">
+          <span class="stat">5462</span>
+          <span class="trend increase">&blacktriangle;2257%</span>
+        </div>
+      </li>
+      <li class="overviewCard">
+        <div class="overviewCardTitle">
+          Profile Views
+          <img src="./images/icon-instagram.svg"
+               alt="Instagram icon">
+        </div>
+        <div class="overviewCardInfo">
+          <span class="stat">52k</span>
+          <span class="trend increase">&blacktriangle;1375%</span>
+        </div>
+      </li>
+      <li class="overviewCard">
+        <div class="overviewCardTitle">
+          Retweets
+          <img src="./images/icon-twitter.svg"
+               alt="Twitter icon">
+        </div>
+        <div class="overviewCardInfo">
+          <span class="stat">117</span>
+          <span class="trend increase">&blacktriangle;303%</span>
+        </div>
+      </li>
+      <li class="overviewCard">
+        <div class="overviewCardTitle">
+          Likes
+          <img src="./images/icon-twitter.svg"
+               alt="Twitter icon">
+        </div>
+        <div class="overviewCardInfo">
+          <span class="stat">507</span>
+          <span class="trend increase">&blacktriangle;553%</span>
+        </div>
+      </li>
+      <li class="overviewCard">
+        <div class="overviewCardTitle">
+          Likes
+          <img src="./images/icon-youtube.svg"
+               alt="Youtube icon">
+        </div>
+        <div class="overviewCardInfo">
+          <span class="stat">107</span>
+          <span class="trend decrease">&blacktriangledown;19%</span>
+        </div>
+      </li>
+      <li class="overviewCard">
+        <div class="overviewCardTitle">
+          Total Views
+          <img src="./images/icon-youtube.svg"
+               alt="Youtube icon">
+        </div>
+        <div class="overviewCardInfo">
+          <span class="stat">1407</span>
+          <span class="trend decrease">&blacktriangledown;12%</span>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge"
+       target="_blank">Frontend Mentor</a>.
+    Coded by <a href="#">Waylon Carrier Nunes</a>.
+  </div>
+</body>
+
+</html>

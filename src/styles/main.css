@@ -1,0 +1,376 @@
+/* @font-face {
+  font-family: "Inter";
+  src: url("../../assets/fonts/inter-variablefont_slntwght-webfont.woff2") format('woff2-variations'),
+    url("../../assets/fonts/inter-variablefont_slntwght-webfont.woff") format('woff-variations');
+  font-weight: 100 900;
+} */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  min-height: 100vh;
+
+  font-size: 10px;
+  font-family: "Inter", Helvetica, Arial, sans-serif;
+
+  /* Common */
+  --lime-green: hsl(163, 72%, 41%);
+  --bright-red: hsl(356, 69%, 56%);
+
+  --facebook-color: hsl(208, 92%, 53%);
+  --twitter-color: hsl(203, 89%, 53%);
+  --instagram-gradient: linear-gradient(to right, hsl(37, 97%, 70%), hsl(329, 70%, 58%));
+  --youtube-color: hsl(348, 97%, 39%);
+
+  /* Dark Theme by default*/
+  --theme-bg: hsl(230, 17%, 14%);
+  --theme-top-bg: hsl(232, 19%, 15%);
+  --theme-card-bg: hsl(228, 28%, 20%);
+  --theme-card-bg-hover: hsl(230, 23.4%, 25.1%);
+  --theme-text-main: hsl(0, 0%, 100%);
+  --theme-text-secondary: hsl(228, 34%, 66%);
+  --theme-toggle: linear-gradient(to right, hsl(210, 78%, 56%), hsl(146, 68%, 55%));
+  --theme-toggle-hover: linear-gradient(to right, hsl(210, 78%, 56%), hsl(146, 68%, 55%));
+  --toggle-height: 2rem
+}
+
+body {
+  font-size: 1.4rem;
+  color: var(--theme-text-main);
+  background: var(--theme-bg);
+}
+
+ul {
+  list-style-type: none;
+}
+
+.trend.increase {
+  color: var(--lime-green);
+}
+
+.trend.decrease {
+  color: var(--bright-red);
+}
+
+
+/* Header */
+
+header {
+  padding-bottom: 4rem;
+  background: var(--theme-top-bg);
+  border-bottom-right-radius: 2rem;
+  border-bottom-left-radius: 2rem;
+}
+
+#headerInnerWrapper {
+  display: flex;
+  flex-direction: column;
+  grid-template-rows: repeat(2, 1fr);
+  padding: 2rem;
+
+
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--theme-text-secondary);
+}
+
+#titleContainer,
+#themeToggleContainer {
+  padding: 2rem 0;
+}
+
+#titleContainer {
+  border-bottom: 1px solid var(--theme-toggle);
+}
+
+#titleContainer h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--theme-text-main);
+}
+
+#themeToggleContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+#themeToggleSwitch {
+  position: relative;
+  width: calc(var(--toggle-height) * 2);
+  height: var(--toggle-height);
+
+  background: var(--theme-toggle);
+  border-radius: calc(var(--toggle-height) * 2);
+}
+
+/* hide default checkbox input */
+#themeToggle {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+#toggleDot {
+  position: absolute;
+  top: 10%;
+  left: 5%;
+  width: 40%;
+  height: 80%;
+  border-radius: 2.1rem;
+  background: var(--theme-top-bg);
+
+  transition: all 30ms linear;
+}
+
+/* Follower Counts section */
+
+#followerCounts {
+  padding: 2rem;
+  margin-top: -6rem;
+}
+
+.countCard {
+  display: grid;
+  grid-template-areas:
+    "countCardTitle countCardTitle countCardTitle countCardTitle"
+    "countCardTitle countCardTitle countCardTitle countCardTitle"
+    "followerCount followerCount followerCount followerCount"
+    "followerCount followerCount followerCount followerCount"
+    "followerText followerText followerText followerText"
+    "trend trend trend trend"
+    "trend trend trend trend";
+  margin-bottom: 2rem;
+
+  background: var(--theme-card-bg);
+  border-top-width: 4px;
+  border-top-style: solid;
+  border-radius: 0.4rem;
+  font-weight: 700;
+}
+
+.countCard:hover {
+  cursor: pointer;
+  background: var(--theme-card-bg-hover);
+}
+
+.countCard>* {
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+}
+
+.countCardTitle {
+  grid-area: countCardTitle;
+  margin: 2rem;
+
+  color: var(--theme-text-secondary);
+}
+
+.countCardIcon {
+  padding-right: 1rem;
+}
+
+.countCard .followerCount {
+  grid-area: followerCount;
+  font-size: 6rem;
+}
+
+.countCard .followerText {
+  grid-area: followerText;
+
+  color: var(--theme-text-secondary);
+  font-weight: 400;
+  letter-spacing: 0.5rem;
+}
+
+.countCard .trend {
+  grid-area: trend;
+  margin: 2rem;
+}
+
+.countCard.facebook {
+  border-color: var(--facebook-color);
+}
+
+.countCard.twitter {
+  border-color: var(--twitter-color);
+}
+
+#instagramCountCardContainer {
+  background-image: var(--instagram-gradient);
+  border-radius: 0.4rem;
+  margin-bottom: 2rem;
+  padding-top: 4px;
+}
+
+.countCard.instagram {
+  height: 100%;
+  border-top: none;
+  border-radius: 0;
+}
+
+.countCard.youtube {
+  border-color: var(--youtube-color);
+}
+
+
+/* overview section */
+
+#overview {
+  padding: 0 2rem 2rem 2rem;
+
+  font-weight: 700;
+}
+
+#overview h2 {
+  margin-bottom: 3rem;
+
+  font-size: 2rem;
+  color: var(--theme-text-secondary);
+}
+
+.overviewCard {
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+
+  background: var(--theme-card-bg);
+  border-radius: 0.4rem;
+}
+
+.overviewCard:hover {
+  cursor: pointer;
+  background: var(--theme-card-bg-hover);
+}
+
+.overviewCardTitle {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+
+  font-size: 1.4rem;
+  color: var(--theme-text-secondary);
+}
+
+.overviewCardInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 1rem;
+}
+
+.overviewCardInfo .stat {
+  font-size: 3rem;
+  line-height: 3rem;
+
+  color: var(--theme-text-main);
+}
+
+.overviewCardInfo .trend {
+  font-size: 1.2rem;
+}
+
+
+/* /////////////////////////////////////////// */
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+
+@media screen and (min-width: 900px) {
+
+  /* Header */
+  header {
+    padding-bottom: 15rem;
+  }
+
+  #headerInnerWrapper {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10%;
+  }
+
+  #titleContainer {
+    border-bottom: none;
+  }
+
+  #themeToggleContainer {
+    justify-content: right;
+  }
+
+  #themeToggleSwitch {
+    margin-left: 1rem;
+  }
+
+  #themeToggleSwitch:hover {
+    cursor: pointer;
+    background: var(--theme-toggle-hover);
+  }
+
+  /* Follower Counts section */
+
+  #followerCounts {
+    padding: 0 10%;
+    margin: -12rem 0 3rem;
+  }
+
+  #followerCounts ul {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  #followerCounts li {
+    flex: 1;
+    margin-right: 2rem;
+  }
+
+  #followerCounts li:last-child {
+    margin-right: 0;
+  }
+
+  .countCardTitle {
+    align-items: center;
+  }
+
+
+  /* Overview section */
+
+  #overview {
+    padding: 0 10%;
+  }
+
+  #overview ul {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+  }
+
+  #overview li {
+    margin-bottom: 0;
+  }
+
+
+
+
+
+  .attribution {
+    text-align: center;
+    margin: 4rem 0 2rem;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
+}
